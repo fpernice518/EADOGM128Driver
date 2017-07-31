@@ -1,0 +1,44 @@
+The Electronic Arts D\-O\-G\-M128 is a 64x128 resolution dot matrix display. It interfaces over S\-P\-I; this library was developed to make it easy and straight forward to use. \par
+\par
+ Before writing any code, we must wire the display to the microcontroller. The schematics shown below illustrate the required connections.
+
+\par
+\par
+  Once the display is properly connected, the user may begin to code. The following code snippet illustrates how to write a simple program for this display using the A\-T\-Mega128. Of course, this snippet only illustrates a small preview of the functions in this library. Please explore the rest of this page for an in-\/depth overview of this library.
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <iom128.h>}
+\textcolor{preprocessor}{#include <stdio.h>}
+\textcolor{preprocessor}{#include "\hyperlink{_d_o_g_m128__driver_8h}{DOGM128\_driver.h}"}
+
+\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})
+\{
+  DDRB = 0x37;    \textcolor{comment}{/* Set SS\_bar, MOSI, SCK, reset, and A0 to outputs,}
+\textcolor{comment}{                   * leave rest alone. }
+\textcolor{comment}{                   */}
+
+  \hyperlink{group___d_o_g_m128__common_ga40b518c7bf134a88c694835daae14236}{dog\_init}(DOG\_INVERTED\_DISPLAY,0x16); \textcolor{comment}{/* Initialize Display */}
+     
+  printf(\textcolor{stringliteral}{"Line %d: %c Hello World"},1, 128); \textcolor{comment}{/* Print Line */}
+  
+  \hyperlink{group___d_o_g_m128__rectangle_ga7e0ff8b8f2020b537610c1d254bc4a97}{dog\_draw\_rectangle}(0,8,127,63,0,\textcolor{charliteral}{'s'});             \textcolor{comment}{/* Draw a rectangle */}
+  
+  \textcolor{comment}{/* Print the "LATEX" Logo */}
+  \hyperlink{group___d_o_g_m128__characters_gad447ae4f91a86316726cea61c92156b2}{dog\_putchar\_select}(25, 20, \textcolor{charliteral}{'L'});
+  \hyperlink{group___d_o_g_m128__characters_gad447ae4f91a86316726cea61c92156b2}{dog\_putchar\_select}(23, 26, \textcolor{charliteral}{'A'});
+  \hyperlink{group___d_o_g_m128__characters_gad447ae4f91a86316726cea61c92156b2}{dog\_putchar\_select}(25, 32, \textcolor{charliteral}{'T'});
+  \hyperlink{group___d_o_g_m128__characters_gad447ae4f91a86316726cea61c92156b2}{dog\_putchar\_select}(29, 38, \textcolor{charliteral}{'E'});
+  \hyperlink{group___d_o_g_m128__characters_gad447ae4f91a86316726cea61c92156b2}{dog\_putchar\_select}(25, 44, \textcolor{charliteral}{'X'});
+
+  \hyperlink{group___d_o_g_m128__characters_gac3a2ca99235c12bdcfb8bd827d0357c1}{dog\_set\_page}(6);                                  \textcolor{comment}{/* Set printing page */}
+  \hyperlink{group___d_o_g_m128__characters_gab8fcc42c02fb705ca5f3c7d94f98b303}{dog\_set\_column}(20);                               \textcolor{comment}{/* Set printing column */}
+  printf(\textcolor{stringliteral}{"Hello Rectangle"});                        \textcolor{comment}{/* Print "Hello Rectangle */}
+
+  \hyperlink{group___d_o_g_m128__common_ga523cc52d34b733fdbcbbca10d11de537}{dog\_print\_buffer}();                  \textcolor{comment}{/* IMPORTANT: Print buffer to screen */}
+
+  \textcolor{keywordflow}{while}(1);
+\}
+\end{DoxyCode}
+
+

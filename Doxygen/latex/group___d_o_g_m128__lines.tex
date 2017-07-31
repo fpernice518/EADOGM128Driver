@@ -1,0 +1,117 @@
+\hypertarget{group___d_o_g_m128__lines}{\section{Lines}
+\label{group___d_o_g_m128__lines}\index{Lines@{Lines}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___d_o_g_m128__lines_gaa65019b0ad1777d5f315e28faf9c703b}{dog\-\_\-draw\-\_\-line} (\hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} x1, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} y1, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} x2, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} y2, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} size, char mode)
+\item 
+void \hyperlink{group___d_o_g_m128__lines_gad33474648d863d3e2f569d5c7667bbe8}{dog\-\_\-draw\-\_\-h\-\_\-line} (\hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} x1, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} x2, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} y, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} size, char mode)
+\item 
+void \hyperlink{group___d_o_g_m128__lines_gae41da7e6bda7b37f0ad7eb037b64ea26}{dog\-\_\-draw\-\_\-v\-\_\-line} (\hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} x, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} y1, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} y2, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} size, char mode)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This header file contains function prototypes for drawing lines on the E\-A D\-O\-G\-M128. It includes a generic line-\/drawing function prototype which works for lines of all slopes as well as fast line-\/drawing function prototypes for horizontal and vertical lines. 
+
+\subsection{Function Documentation}
+\hypertarget{group___d_o_g_m128__lines_gad33474648d863d3e2f569d5c7667bbe8}{\index{Lines@{Lines}!dog\-\_\-draw\-\_\-h\-\_\-line@{dog\-\_\-draw\-\_\-h\-\_\-line}}
+\index{dog\-\_\-draw\-\_\-h\-\_\-line@{dog\-\_\-draw\-\_\-h\-\_\-line}!Lines@{Lines}}
+\subsubsection[{dog\-\_\-draw\-\_\-h\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void dog\-\_\-draw\-\_\-h\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{x1, }
+\item[{{\bf uint8\-\_\-t}}]{x2, }
+\item[{{\bf uint8\-\_\-t}}]{y, }
+\item[{{\bf uint8\-\_\-t}}]{size, }
+\item[{char}]{mode}
+\end{DoxyParamCaption}
+)}}\label{group___d_o_g_m128__lines_gad33474648d863d3e2f569d5c7667bbe8}
+This function is used to draw exclusively horizontal lines to the screen buffer. It should be used in place of \hyperlink{group___d_o_g_m128__lines_gaa65019b0ad1777d5f315e28faf9c703b}{dog\-\_\-draw\-\_\-line()} whenever possible to conserve resources.
+
+\begin{DoxyParagraph}{Parameters}
+
+\begin{DoxyItemize}
+\item {\itshape x1} = X coordinate of line end point(x1,y) in the set of \mbox{[}0,127\mbox{]}.
+\item {\itshape x2} = X coordinate of line end point(x2,y) in the set of \mbox{[}0,127\mbox{]}.
+\item {\itshape y} = Y coordinate of line in the set of \mbox{[}0,63\mbox{]}. Since a horizontal line maintains a constant Y value, we only need one Y parameter.
+\item {\itshape size} = Thickness of the line in the set \mbox{[}0,1\mbox{]}.
+\item {\itshape mode} = 'c' to clear the line, 's' to set the line.
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Algorithm}
+The function begins by checking the parameter ranges, then swaps the x1 and x2 if needed. Finally, it loops through, setting or clearing every pixel between x1 and x2.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Assumptions}
+
+\begin{DoxyItemize}
+\item none 
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\hypertarget{group___d_o_g_m128__lines_gaa65019b0ad1777d5f315e28faf9c703b}{\index{Lines@{Lines}!dog\-\_\-draw\-\_\-line@{dog\-\_\-draw\-\_\-line}}
+\index{dog\-\_\-draw\-\_\-line@{dog\-\_\-draw\-\_\-line}!Lines@{Lines}}
+\subsubsection[{dog\-\_\-draw\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void dog\-\_\-draw\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{x1, }
+\item[{{\bf uint8\-\_\-t}}]{y1, }
+\item[{{\bf uint8\-\_\-t}}]{x2, }
+\item[{{\bf uint8\-\_\-t}}]{y2, }
+\item[{{\bf uint8\-\_\-t}}]{size, }
+\item[{char}]{mode}
+\end{DoxyParamCaption}
+)}}\label{group___d_o_g_m128__lines_gaa65019b0ad1777d5f315e28faf9c703b}
+This function is used to draw generic lines of any slope to the screen buffer. If the user is only drawing horizontal or vertical lines, it is advised to use one of the two other functions in this file to conserve system resources.
+
+\begin{DoxyParagraph}{Parameters}
+
+\begin{DoxyItemize}
+\item {\itshape x1} = X coordinate of line end point(x1,y1) in the set of \mbox{[}0,127\mbox{]}.
+\item {\itshape y1} = Y coordinate of line end point(x1,y1) in the set of \mbox{[}0,63\mbox{]}.
+\item {\itshape x2} = X coordinate of line end point(x2,y2) in the set of \mbox{[}0,127\mbox{]}.
+\item {\itshape y2} = Y coordinate of line end point(x2,y2) in the set of \mbox{[}0,63\mbox{]}.
+\item {\itshape size} = Thickness of the line in the set \mbox{[}0,1\mbox{]}.
+\item {\itshape mode} = 'c' to clear the line, 's' to set the line.
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Algorithm}
+The function begins by checking parameter ranges, then computes point placement using \href{http://www.cc.gatech.edu/g
+rads/m/Aaron.E.McClennen/Bresenham/code.html}{\tt Bresenham's Line Algorithm}.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Assumptions}
+
+\begin{DoxyItemize}
+\item none 
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\hypertarget{group___d_o_g_m128__lines_gae41da7e6bda7b37f0ad7eb037b64ea26}{\index{Lines@{Lines}!dog\-\_\-draw\-\_\-v\-\_\-line@{dog\-\_\-draw\-\_\-v\-\_\-line}}
+\index{dog\-\_\-draw\-\_\-v\-\_\-line@{dog\-\_\-draw\-\_\-v\-\_\-line}!Lines@{Lines}}
+\subsubsection[{dog\-\_\-draw\-\_\-v\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void dog\-\_\-draw\-\_\-v\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{x, }
+\item[{{\bf uint8\-\_\-t}}]{y1, }
+\item[{{\bf uint8\-\_\-t}}]{y2, }
+\item[{{\bf uint8\-\_\-t}}]{size, }
+\item[{char}]{mode}
+\end{DoxyParamCaption}
+)}}\label{group___d_o_g_m128__lines_gae41da7e6bda7b37f0ad7eb037b64ea26}
+This function is used to draw exclusively vertical lines to the screen buffer. It should be used in place of \hyperlink{group___d_o_g_m128__lines_gaa65019b0ad1777d5f315e28faf9c703b}{dog\-\_\-draw\-\_\-line()} whenever possible to conserve resources.
+
+\begin{DoxyParagraph}{Parameters}
+
+\begin{DoxyItemize}
+\item {\itshape x} = X coordinate of line in the set of \mbox{[}0,127\mbox{]}. Since a vertical line maintains a constant X value, we only need one X parameter.
+\item {\itshape y1} = Y coordinate of line end point(x,y1) in the set of \mbox{[}0,63\mbox{]}.
+\item {\itshape y2} = Y coordinate of line end point(x,y2) in the set of \mbox{[}0,63\mbox{]}.
+\item {\itshape size} = Thickness of the line in the set \mbox{[}0,1\mbox{]}.
+\item {\itshape mode} = 'c' to clear the line, 's' to set the line.
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Algorithm}
+The function begins by checking the parameter ranges, then swaps the y1 and y2 if needed. Finally, it loops through, setting or clearing every pixel between y1 and y2.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Assumptions}
+
+\begin{DoxyItemize}
+\item none 
+\end{DoxyItemize}
+\end{DoxyParagraph}

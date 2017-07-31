@@ -1,0 +1,153 @@
+\hypertarget{group___d_o_g_m128__characters}{\section{Characters}
+\label{group___d_o_g_m128__characters}\index{Characters@{Characters}}
+}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___d_o_g_m128__characters_gad07f9ec23024de01b6d0192908ac679f}{D\-O\-G\-\_\-\-C\-H\-A\-R\-\_\-\-W\-I\-D\-T\-H}~126
+\item 
+\#define \hyperlink{group___d_o_g_m128__characters_ga9bb126e85fbda49859cd103b0ff26112}{D\-O\-G\-\_\-\-C\-H\-A\-R\-\_\-\-H\-E\-I\-G\-H\-T}~8
+\item 
+\#define \hyperlink{group___d_o_g_m128__characters_ga303307bf233995e4a8e6db23cfb07108}{D\-O\-G\-\_\-\-H\-I\-D\-D\-E\-N\-\_\-\-M\-I\-C\-K\-E\-Y}~128
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group___d_o_g_m128__characters_gaf4de2514b7778805db3815e8dd6cf09a}{putchar} (int c)
+\item 
+\hyperlink{group___d_o_g_m128__common_gaef44329758059c91c76d334e8fc09700}{int8\-\_\-t} \hyperlink{group___d_o_g_m128__characters_gac3a2ca99235c12bdcfb8bd827d0357c1}{dog\-\_\-set\-\_\-page} (\hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} new\-\_\-page)
+\item 
+\hyperlink{group___d_o_g_m128__common_gaef44329758059c91c76d334e8fc09700}{int8\-\_\-t} \hyperlink{group___d_o_g_m128__characters_gab8fcc42c02fb705ca5f3c7d94f98b303}{dog\-\_\-set\-\_\-column} (\hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} new\-\_\-col)
+\item 
+\hyperlink{group___d_o_g_m128__common_gaef44329758059c91c76d334e8fc09700}{int8\-\_\-t} \hyperlink{group___d_o_g_m128__characters_gad447ae4f91a86316726cea61c92156b2}{dog\-\_\-putchar\-\_\-select} (\hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} row, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} new\-\_\-col, char c)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains function prototypes to write characters to the D\-O\-G\-M128. It contains a 5x7 A\-S\-C\-I\-I character set and functions so that the user only needs to pass {\bfseries chars} when placing a character on the screen rather than manually setting each individual pixel. Note that the functions included in this file D\-O N\-O\-T assume that the user has initialized the display. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group___d_o_g_m128__characters_ga9bb126e85fbda49859cd103b0ff26112}{\index{Characters@{Characters}!D\-O\-G\-\_\-\-C\-H\-A\-R\-\_\-\-H\-E\-I\-G\-H\-T@{D\-O\-G\-\_\-\-C\-H\-A\-R\-\_\-\-H\-E\-I\-G\-H\-T}}
+\index{D\-O\-G\-\_\-\-C\-H\-A\-R\-\_\-\-H\-E\-I\-G\-H\-T@{D\-O\-G\-\_\-\-C\-H\-A\-R\-\_\-\-H\-E\-I\-G\-H\-T}!Characters@{Characters}}
+\subsubsection[{D\-O\-G\-\_\-\-C\-H\-A\-R\-\_\-\-H\-E\-I\-G\-H\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-O\-G\-\_\-\-C\-H\-A\-R\-\_\-\-H\-E\-I\-G\-H\-T~8}}\label{group___d_o_g_m128__characters_ga9bb126e85fbda49859cd103b0ff26112}
+Number of pages on the display. Included for consistency. \hypertarget{group___d_o_g_m128__characters_gad07f9ec23024de01b6d0192908ac679f}{\index{Characters@{Characters}!D\-O\-G\-\_\-\-C\-H\-A\-R\-\_\-\-W\-I\-D\-T\-H@{D\-O\-G\-\_\-\-C\-H\-A\-R\-\_\-\-W\-I\-D\-T\-H}}
+\index{D\-O\-G\-\_\-\-C\-H\-A\-R\-\_\-\-W\-I\-D\-T\-H@{D\-O\-G\-\_\-\-C\-H\-A\-R\-\_\-\-W\-I\-D\-T\-H}!Characters@{Characters}}
+\subsubsection[{D\-O\-G\-\_\-\-C\-H\-A\-R\-\_\-\-W\-I\-D\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-O\-G\-\_\-\-C\-H\-A\-R\-\_\-\-W\-I\-D\-T\-H~126}}\label{group___d_o_g_m128__characters_gad07f9ec23024de01b6d0192908ac679f}
+Max line width. Note that characters are 5x7 pixels wide (actually 6x7 when we take into account the automatic 1-\/column wide space added to the buffer after almost all characters. Due to this restriction, we can only print up to 126/6 = 21 characters per line. 128/6 is not a whole number, hence why we cannot print to the whole width of the display. \hypertarget{group___d_o_g_m128__characters_ga303307bf233995e4a8e6db23cfb07108}{\index{Characters@{Characters}!D\-O\-G\-\_\-\-H\-I\-D\-D\-E\-N\-\_\-\-M\-I\-C\-K\-E\-Y@{D\-O\-G\-\_\-\-H\-I\-D\-D\-E\-N\-\_\-\-M\-I\-C\-K\-E\-Y}}
+\index{D\-O\-G\-\_\-\-H\-I\-D\-D\-E\-N\-\_\-\-M\-I\-C\-K\-E\-Y@{D\-O\-G\-\_\-\-H\-I\-D\-D\-E\-N\-\_\-\-M\-I\-C\-K\-E\-Y}!Characters@{Characters}}
+\subsubsection[{D\-O\-G\-\_\-\-H\-I\-D\-D\-E\-N\-\_\-\-M\-I\-C\-K\-E\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-O\-G\-\_\-\-H\-I\-D\-D\-E\-N\-\_\-\-M\-I\-C\-K\-E\-Y~128}}\label{group___d_o_g_m128__characters_ga303307bf233995e4a8e6db23cfb07108}
+Surprise character, just for fun! 
+
+\subsection{Function Documentation}
+\hypertarget{group___d_o_g_m128__characters_gad447ae4f91a86316726cea61c92156b2}{\index{Characters@{Characters}!dog\-\_\-putchar\-\_\-select@{dog\-\_\-putchar\-\_\-select}}
+\index{dog\-\_\-putchar\-\_\-select@{dog\-\_\-putchar\-\_\-select}!Characters@{Characters}}
+\subsubsection[{dog\-\_\-putchar\-\_\-select}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int8\-\_\-t} dog\-\_\-putchar\-\_\-select (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{row, }
+\item[{{\bf uint8\-\_\-t}}]{new\-\_\-col, }
+\item[{char}]{c}
+\end{DoxyParamCaption}
+)}}\label{group___d_o_g_m128__characters_gad447ae4f91a86316726cea61c92156b2}
+This function is used to write a character to the screen at any row (not page) or column on the screen regardless of the current cursor position. In other words, the character being written to the screen is not restricted to a particular page or column. {\bfseries N\-O\-T\-E\-:} This function does not1 move the current position; it will assume its old position before the function returns.
+
+\begin{DoxyParagraph}{Parameters}
+
+\begin{DoxyItemize}
+\item {\itshape row} = The desired row to place the character relative to the top of character.
+\item {\itshape new\-\_\-col} = The desired column to place the character to the left hand side of the character.
+\item {\itshape c} = The character to be written to the screen.
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Algorithm}
+Ensures that the provided row and column are within range. It then determines the page or pages in which the character will be placed on and the portion of the character that will be placed on each page. Next it looks up the character's bitmap in the character lookup table and places it in the screen buffer.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Assumptions}
+
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+Upon successful completion, the function returns zero. Otherwise it returns -\/1. 
+\end{DoxyReturn}
+\hypertarget{group___d_o_g_m128__characters_gab8fcc42c02fb705ca5f3c7d94f98b303}{\index{Characters@{Characters}!dog\-\_\-set\-\_\-column@{dog\-\_\-set\-\_\-column}}
+\index{dog\-\_\-set\-\_\-column@{dog\-\_\-set\-\_\-column}!Characters@{Characters}}
+\subsubsection[{dog\-\_\-set\-\_\-column}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int8\-\_\-t} dog\-\_\-set\-\_\-column (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{new\-\_\-col}
+\end{DoxyParamCaption}
+)}}\label{group___d_o_g_m128__characters_gab8fcc42c02fb705ca5f3c7d94f98b303}
+This function is used to set the column where \hyperlink{group___d_o_g_m128__characters_gaf4de2514b7778805db3815e8dd6cf09a}{putchar()} will begin writing a character to the screen (starting at the left-\/side of the letter).
+
+\begin{DoxyParagraph}{Parameters}
+
+\begin{DoxyItemize}
+\item {\itshape new\-\_\-col} = The new column number to be set. The value should be between 0 and 122.
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Algorithm}
+Ensures that parameter {\itshape new\-\_\-col} is within a valid range. If it is within range, it sets the static variable {\itshape col} equal to {\itshape new\-\_\-col}. Otherwise, {\itshape col} remains unchanged.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Assumptions}
+
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+Upon successful completion, the function returns zero. Otherwise it returns -\/1. 
+\end{DoxyReturn}
+\hypertarget{group___d_o_g_m128__characters_gac3a2ca99235c12bdcfb8bd827d0357c1}{\index{Characters@{Characters}!dog\-\_\-set\-\_\-page@{dog\-\_\-set\-\_\-page}}
+\index{dog\-\_\-set\-\_\-page@{dog\-\_\-set\-\_\-page}!Characters@{Characters}}
+\subsubsection[{dog\-\_\-set\-\_\-page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int8\-\_\-t} dog\-\_\-set\-\_\-page (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{new\-\_\-page}
+\end{DoxyParamCaption}
+)}}\label{group___d_o_g_m128__characters_gac3a2ca99235c12bdcfb8bd827d0357c1}
+This function is used to set the page where \hyperlink{group___d_o_g_m128__characters_gaf4de2514b7778805db3815e8dd6cf09a}{putchar()} will begin writing a character to the screen.
+
+\begin{DoxyParagraph}{Parameters}
+
+\begin{DoxyItemize}
+\item {\itshape new\-\_\-page} = The new page number to be set. The value should be between 0 and 7.
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Algorithm}
+Ensures that parameter {\itshape new\-\_\-page} is within a valid range. If it is within range, it sets the static variable {\itshape page} equal to {\itshape new\-\_\-page}. Otherwise, {\itshape page} remains unchanged.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Assumptions}
+
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+Upon successful completion, the function returns zero. Otherwise it returns -\/1. 
+\end{DoxyReturn}
+\hypertarget{group___d_o_g_m128__characters_gaf4de2514b7778805db3815e8dd6cf09a}{\index{Characters@{Characters}!putchar@{putchar}}
+\index{putchar@{putchar}!Characters@{Characters}}
+\subsubsection[{putchar}]{\setlength{\rightskip}{0pt plus 5cm}int putchar (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}}\label{group___d_o_g_m128__characters_gaf4de2514b7778805db3815e8dd6cf09a}
+This function is used by printf() to place individual characters on the print buffer; however, it may also be used standalone as well.
+
+\begin{DoxyParagraph}{Parameters}
+
+\begin{DoxyItemize}
+\item {\itshape c} = The character to be printed to the display buffer. It is of type int rather than char to fit the predefined prototype in the stdio.\-h header.
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Algorithm}
+The function keeps track of the current column and page between subsequent calls. It begins by checking if {\bfseries c} is a newline character and will increment to the next page accordingly. Otherwise, it will then check if the end of line has been reached (and if so, it will increment to the next page. It subsequently checks that the last page has not been reached (if it has, it will wrap around to the top of the display). Finally, it looks up the character's bitmap in a lookup table and prints that to the display buffer contained in the common.\-c file.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Assumptions}
+
+\begin{DoxyItemize}
+\item The user has no data they wish to leave on the screen that is in the path of the characters. That is, the user must be welcoming to the fact that all pixels along a {\bfseries  (6$\ast$n)x8 } path (where {\bfseries n} is the number of characters printed) will be erased to make way for the characters.
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+Upon sucessful completion, the original character {\itshape c} is returned. 
+\end{DoxyReturn}

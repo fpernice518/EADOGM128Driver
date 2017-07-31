@@ -1,0 +1,89 @@
+\hypertarget{_d_o_g_m128__common_8h}{\section{src/\-D\-O\-G\-M128\-\_\-common.h File Reference}
+\label{_d_o_g_m128__common_8h}\index{src/\-D\-O\-G\-M128\-\_\-common.\-h@{src/\-D\-O\-G\-M128\-\_\-common.\-h}}
+}
+
+
+Header file containing common macros, typedefs, and function prototypes which belong in no particular category. \par
+  
+
+
+{\ttfamily \#include \char`\"{}D\-O\-G\-M128\-\_\-user\-\_\-config.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___d_o_g_m128__common_ga7b8b80428a3dfcea1e2abb255c887e9f}{D\-O\-G\-\_\-\-W\-I\-D\-T\-H}~128
+\item 
+\#define \hyperlink{group___d_o_g_m128__common_gab4202a8ef333b335e5337d1e4979bca4}{D\-O\-G\-\_\-\-H\-E\-I\-G\-H\-T}~64
+\item 
+\#define \hyperlink{group___d_o_g_m128__common_ga84cee5ac2871874523ec0f88c59ae82c}{D\-O\-G\-\_\-\-P\-A\-G\-E\-\_\-\-H\-E\-I\-G\-H\-T}~8
+\item 
+\#define \hyperlink{group___d_o_g_m128__common_ga62e58ee0221736142ba2ff8cacafdb9f}{S\-E\-T\-B\-I\-T}(port, bit)~((port) $|$= (1 $<$$<$ (bit)))
+\item 
+\#define \hyperlink{group___d_o_g_m128__common_ga8826ffc761710e6313c4c3e3188bfc13}{C\-L\-E\-A\-R\-B\-I\-T}(port, bit)~((port) \&= $\sim$(1 $<$$<$ (bit)))
+\item 
+\#define \hyperlink{group___d_o_g_m128__common_gacb4f4565c73b548d0dfc34753524c0ff}{D\-O\-G\-\_\-\-I\-N\-I\-T\-\_\-\-S\-P\-I}()
+\item 
+\#define \hyperlink{group___d_o_g_m128__common_gaad3d69951f6ebd19fb2e26e181cf7bdc}{D\-O\-G\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-E\-L\-E\-C\-T}()~\hyperlink{group___d_o_g_m128__common_ga8826ffc761710e6313c4c3e3188bfc13}{C\-L\-E\-A\-R\-B\-I\-T}(\hyperlink{group___d_o_g_m128__user__configuration_gaf9e7124c755de651dd19889cd4304e37}{D\-O\-G\-\_\-\-S\-P\-I\-\_\-\-P\-O\-R\-T}, \hyperlink{group___d_o_g_m128__user__configuration_ga7dc422a18a3abc45c6d2661e22239ed1}{D\-O\-G\-\_\-\-S\-S\-\_\-\-B\-A\-R\-\_\-\-P\-I\-N});
+\item 
+\#define \hyperlink{group___d_o_g_m128__common_ga5642c965ca96c19a44caef1f2c6faec7}{D\-O\-G\-\_\-\-S\-L\-A\-V\-E\-\_\-\-D\-E\-S\-E\-L\-E\-C\-T}()~\hyperlink{group___d_o_g_m128__common_ga62e58ee0221736142ba2ff8cacafdb9f}{S\-E\-T\-B\-I\-T}(\hyperlink{group___d_o_g_m128__user__configuration_gaf9e7124c755de651dd19889cd4304e37}{D\-O\-G\-\_\-\-S\-P\-I\-\_\-\-P\-O\-R\-T}, \hyperlink{group___d_o_g_m128__user__configuration_ga7dc422a18a3abc45c6d2661e22239ed1}{D\-O\-G\-\_\-\-S\-S\-\_\-\-B\-A\-R\-\_\-\-P\-I\-N});
+\item 
+\#define \hyperlink{group___d_o_g_m128__common_ga5c1cae065e6ef62966a2dae4befab749}{D\-O\-G\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-R\-E\-S\-E\-T}()~\hyperlink{group___d_o_g_m128__common_ga8826ffc761710e6313c4c3e3188bfc13}{C\-L\-E\-A\-R\-B\-I\-T}(\hyperlink{group___d_o_g_m128__user__configuration_gadcdcd4600395a1e3f2fb35ecb2b3d929}{D\-O\-G\-\_\-\-R\-E\-S\-E\-T\-\_\-\-P\-O\-R\-T}, \hyperlink{group___d_o_g_m128__user__configuration_gab6cbac4e4756ac898479caef5b76cd29}{D\-O\-G\-\_\-\-R\-E\-S\-E\-T\-\_\-\-P\-I\-N});
+\item 
+\#define \hyperlink{group___d_o_g_m128__common_ga781750ddc65805308fad019f7f3185a2}{D\-O\-G\-\_\-\-U\-N\-A\-S\-S\-E\-R\-T\-\_\-\-R\-E\-S\-E\-T}()~\hyperlink{group___d_o_g_m128__common_ga62e58ee0221736142ba2ff8cacafdb9f}{S\-E\-T\-B\-I\-T}(\hyperlink{group___d_o_g_m128__user__configuration_gadcdcd4600395a1e3f2fb35ecb2b3d929}{D\-O\-G\-\_\-\-R\-E\-S\-E\-T\-\_\-\-P\-O\-R\-T}, \hyperlink{group___d_o_g_m128__user__configuration_gab6cbac4e4756ac898479caef5b76cd29}{D\-O\-G\-\_\-\-R\-E\-S\-E\-T\-\_\-\-P\-I\-N});
+\item 
+\#define \hyperlink{group___d_o_g_m128__common_ga367ace37414321f17523c24980fe449e}{D\-O\-G\-\_\-\-S\-E\-N\-D\-\_\-\-D\-A\-T\-A}()~\hyperlink{group___d_o_g_m128__common_ga62e58ee0221736142ba2ff8cacafdb9f}{S\-E\-T\-B\-I\-T}(\hyperlink{group___d_o_g_m128__user__configuration_ga7a79d5d66a25812afb30f2524490af3e}{D\-O\-G\-\_\-\-D\-A\-T\-A\-\_\-\-O\-R\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-O\-R\-T}, \hyperlink{group___d_o_g_m128__user__configuration_ga49fc845183d9cc067238f3b6d26a0a9b}{D\-O\-G\-\_\-\-D\-A\-T\-A\-\_\-\-O\-R\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-I\-N});
+\item 
+\#define \hyperlink{group___d_o_g_m128__common_ga40366433b74f85add18a09edfdc14fc7}{D\-O\-G\-\_\-\-S\-E\-N\-D\-\_\-\-C\-O\-M\-M\-A\-N\-D}()~\hyperlink{group___d_o_g_m128__common_ga8826ffc761710e6313c4c3e3188bfc13}{C\-L\-E\-A\-R\-B\-I\-T}(\hyperlink{group___d_o_g_m128__user__configuration_ga7a79d5d66a25812afb30f2524490af3e}{D\-O\-G\-\_\-\-D\-A\-T\-A\-\_\-\-O\-R\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-O\-R\-T}, \hyperlink{group___d_o_g_m128__user__configuration_ga49fc845183d9cc067238f3b6d26a0a9b}{D\-O\-G\-\_\-\-D\-A\-T\-A\-\_\-\-O\-R\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-P\-I\-N});
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t}
+\item 
+typedef signed char \hyperlink{group___d_o_g_m128__common_gaef44329758059c91c76d334e8fc09700}{int8\-\_\-t}
+\item 
+typedef unsigned int \hyperlink{group___d_o_g_m128__common_ga1f1825b69244eb3ad2c7165ddc99c956}{uint16\-\_\-t}
+\item 
+typedef signed int \hyperlink{group___d_o_g_m128__common_ga932e6ccc3d54c58f761c1aead83bd6d7}{int16\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group___d_o_g_m128__common_ga2495b8c4758191a63686e5c316ff2faa}{dog\-\_\-power\-\_\-state\-\_\-t} \{ {\bfseries D\-O\-G\-\_\-\-O\-F\-F} = 0, 
+{\bfseries D\-O\-G\-\_\-\-O\-N}
+ \}
+\item 
+enum \hyperlink{group___d_o_g_m128__common_ga596e5903db7b2d54509a1609fa771cfa}{dog\-\_\-display\-\_\-mode\-\_\-t} \{ {\bfseries D\-O\-G\-\_\-\-N\-O\-R\-M\-A\-L\-\_\-\-D\-I\-S\-P\-L\-A\-Y} = 0, 
+{\bfseries D\-O\-G\-\_\-\-I\-N\-V\-E\-R\-T\-E\-D\-\_\-\-D\-I\-S\-P\-L\-A\-Y}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___d_o_g_m128__common_ga40b518c7bf134a88c694835daae14236}{dog\-\_\-init} (\hyperlink{group___d_o_g_m128__common_ga596e5903db7b2d54509a1609fa771cfa}{dog\-\_\-display\-\_\-mode\-\_\-t} display\-\_\-mode, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} contrast)
+\item 
+void \hyperlink{group___d_o_g_m128__common_gae14f901eab1ffd8d9f1a23d90e90e45e}{dog\-\_\-clear\-\_\-display} (void)
+\item 
+void \hyperlink{group___d_o_g_m128__common_ga9a71122564415ade2ee8b8710c668273}{dog\-\_\-clear\-\_\-buffer} (void)
+\item 
+void \hyperlink{group___d_o_g_m128__common_ga523cc52d34b733fdbcbbca10d11de537}{dog\-\_\-print\-\_\-buffer} (void)
+\item 
+void \hyperlink{group___d_o_g_m128__common_gafa34efa739ba750a2aa6f5714366d663}{dog\-\_\-set\-\_\-contrast} (\hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} contrast)
+\item 
+void \hyperlink{group___d_o_g_m128__common_ga65971023566f90744bfc2b71d542fd64}{dog\-\_\-invert\-\_\-pixels} (\hyperlink{group___d_o_g_m128__common_ga596e5903db7b2d54509a1609fa771cfa}{dog\-\_\-display\-\_\-mode\-\_\-t} display\-\_\-mode)
+\item 
+void \hyperlink{group___d_o_g_m128__common_gaeaa3ffbecc50e7e8cbd27e6c957b7990}{dog\-\_\-power} (\hyperlink{group___d_o_g_m128__common_ga2495b8c4758191a63686e5c316ff2faa}{dog\-\_\-power\-\_\-state\-\_\-t} state)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file containing common macros, typedefs, and function prototypes which belong in no particular category. \par
+ \par
+ \begin{DoxyAuthor}{Author}
+Frank Pernice \par
+ 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+October 2013 \par
+ 
+\end{DoxyDate}

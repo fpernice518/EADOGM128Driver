@@ -1,0 +1,54 @@
+\hypertarget{group___d_o_g_m128__pixel}{\section{Pixel}
+\label{group___d_o_g_m128__pixel}\index{Pixel@{Pixel}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group___d_o_g_m128__common_gaef44329758059c91c76d334e8fc09700}{int8\-\_\-t} \hyperlink{group___d_o_g_m128__pixel_gab01d735d58a57110f8bf5b4dece8ea49}{dog\-\_\-draw\-\_\-pixel} (\hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} row, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} col, char mode)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the function prototype for the \hyperlink{group___d_o_g_m128__pixel_gab01d735d58a57110f8bf5b4dece8ea49}{dog\-\_\-draw\-\_\-pixel()} function. 
+
+\subsection{Function Documentation}
+\hypertarget{group___d_o_g_m128__pixel_gab01d735d58a57110f8bf5b4dece8ea49}{\index{Pixel@{Pixel}!dog\-\_\-draw\-\_\-pixel@{dog\-\_\-draw\-\_\-pixel}}
+\index{dog\-\_\-draw\-\_\-pixel@{dog\-\_\-draw\-\_\-pixel}!Pixel@{Pixel}}
+\subsubsection[{dog\-\_\-draw\-\_\-pixel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf int8\-\_\-t} dog\-\_\-draw\-\_\-pixel (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{row, }
+\item[{{\bf uint8\-\_\-t}}]{col, }
+\item[{char}]{mode}
+\end{DoxyParamCaption}
+)}}\label{group___d_o_g_m128__pixel_gab01d735d58a57110f8bf5b4dece8ea49}
+This function is used to set an individual pixel on the screen.
+
+\begin{DoxyParagraph}{Parameters}
+
+\begin{DoxyItemize}
+\item {\itshape row} = The desired row to place the pixel (0-\/63)
+\item {\itshape col} = The desired column to place the pixel (0-\/127)
+\item {\itshape mode} = 's' for set, 'c' for clear
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Algorithm}
+
+\begin{DoxyItemize}
+\item Ensures that the provided row and column are within range. It then computes the which page the pixel will be placed on and where within that page. It then either sets or clears the pixel depending on the mode
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Assumptions}
+
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0 upon sucessful completion
+\item -\/1 in case of an out of range row
+\item -\/2 in case of an out of range column
+\item -\/3 in case of invalid mode character 
+\end{DoxyItemize}
+\end{DoxyReturn}

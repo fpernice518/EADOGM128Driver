@@ -1,0 +1,67 @@
+\hypertarget{group___d_o_g_m128__arc}{\section{Arcs and Circles}
+\label{group___d_o_g_m128__arc}\index{Arcs and Circles@{Arcs and Circles}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___d_o_g_m128__arc_gabf8940f51fd82da99100b41d73bd2ddd}{dog\-\_\-draw\-\_\-arc} (\hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} x\-\_\-center, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} y\-\_\-center, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} radius, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} start\-\_\-angle, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} end\-\_\-angle, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} size, char mode)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the prototype for the \hyperlink{group___d_o_g_m128__arc_gabf8940f51fd82da99100b41d73bd2ddd}{dog\-\_\-draw\-\_\-arc()} function, which is used to set or clear an arc or unfilled circle. 
+
+\subsection{Function Documentation}
+\hypertarget{group___d_o_g_m128__arc_gabf8940f51fd82da99100b41d73bd2ddd}{\index{Arcs and Circles@{Arcs and Circles}!dog\-\_\-draw\-\_\-arc@{dog\-\_\-draw\-\_\-arc}}
+\index{dog\-\_\-draw\-\_\-arc@{dog\-\_\-draw\-\_\-arc}!Arcs and Circles@{Arcs and Circles}}
+\subsubsection[{dog\-\_\-draw\-\_\-arc}]{\setlength{\rightskip}{0pt plus 5cm}void dog\-\_\-draw\-\_\-arc (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{x\-\_\-center, }
+\item[{{\bf uint8\-\_\-t}}]{y\-\_\-center, }
+\item[{{\bf uint8\-\_\-t}}]{radius, }
+\item[{{\bf uint8\-\_\-t}}]{start\-\_\-angle, }
+\item[{{\bf uint8\-\_\-t}}]{end\-\_\-angle, }
+\item[{{\bf uint8\-\_\-t}}]{size, }
+\item[{char}]{mode}
+\end{DoxyParamCaption}
+)}}\label{group___d_o_g_m128__arc_gabf8940f51fd82da99100b41d73bd2ddd}
+This function is used set or clear an arc or unfilled circle of thickness 0 or 1. If both the start and end angle are the same number, then a circle is drawn.
+
+\begin{DoxyParagraph}{Parameters}
+
+\begin{DoxyItemize}
+\item {\itshape x\-\_\-center} = X coordinate of the arc or circle's center.
+\item {\itshape y\-\_\-center} = Y coordinate of the arc or circle's center.
+\item {\itshape radius} = Radius of the arc or circle
+
+Start and end angle are not represented in degrees nor radians. To convert from degrees to L\-C\-D\-\_\-angles, use the following formula\-: \par
+ L\-C\-D\-\_\-angle = angle\-\_\-degrees $\ast$ (32/45) \par
+ So\-: \par
+ 90 degrees = 64, \par
+ 180 degrees = 128, \par
+ 270 degrees = 192, \par
+ 360 degrees = 256 (due to 8-\/bit overflow, this is also zero) .\par
+
+\item {\itshape start\-\_\-angle} = The start angle of the arc or circle
+\item {\itshape end\-\_\-angle} = The end angle of the arc or circle \par
+ \par
+ \par
+
+\item {\itshape size} = The thickness of the point to place (0 or 1)
+\item {\itshape mode} = 's' for set, 'c' for clear
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Algorithm}
+This function essentially draws lines between two computed coordinates through multiple iterations as it makes its way around the circle or arc.
+\begin{DoxyItemize}
+\item First computes the difference between provided angles
+\item The computes the number of required iterations.
+\item Then it computes X and Y coordinates for each iteration, drawing a line between them with the \hyperlink{group___d_o_g_m128__lines_gaa65019b0ad1777d5f315e28faf9c703b}{dog\-\_\-draw\-\_\-line()} function.
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Assumptions}
+
+\begin{DoxyItemize}
+\item None 
+\end{DoxyItemize}
+\end{DoxyParagraph}

@@ -1,0 +1,47 @@
+\hypertarget{group___d_o_g_m128__point}{\section{Point}
+\label{group___d_o_g_m128__point}\index{Point@{Point}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___d_o_g_m128__point_gaef2fb876f49ee0a81cadfca512411481}{dog\-\_\-draw\-\_\-point} (\hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} row, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} col, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} size, char mode)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the prototype for the \hyperlink{group___d_o_g_m128__point_gaef2fb876f49ee0a81cadfca512411481}{dog\-\_\-draw\-\_\-point()} function, which is used to set either a single pixel or a series of pixels for increased line thickness. 
+
+\subsection{Function Documentation}
+\hypertarget{group___d_o_g_m128__point_gaef2fb876f49ee0a81cadfca512411481}{\index{Point@{Point}!dog\-\_\-draw\-\_\-point@{dog\-\_\-draw\-\_\-point}}
+\index{dog\-\_\-draw\-\_\-point@{dog\-\_\-draw\-\_\-point}!Point@{Point}}
+\subsubsection[{dog\-\_\-draw\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}void dog\-\_\-draw\-\_\-point (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{row, }
+\item[{{\bf uint8\-\_\-t}}]{col, }
+\item[{{\bf uint8\-\_\-t}}]{size, }
+\item[{char}]{mode}
+\end{DoxyParamCaption}
+)}}\label{group___d_o_g_m128__point_gaef2fb876f49ee0a81cadfca512411481}
+This function is used to set an individual pixel or a pixel and a set of surrounding pixels for increased thickness.
+
+\begin{DoxyParagraph}{Parameters}
+
+\begin{DoxyItemize}
+\item {\itshape row} = The desired row to place the pixel or center of point (0-\/63)
+\item {\itshape col} = The desired column to place the pixel center of point (0-\/127)
+\item {\itshape size} = The thickness of the point to place (0 or 1)
+\item {\itshape mode} = 's' for set, 'c' for clear
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Algorithm}
+
+\begin{DoxyItemize}
+\item Determines the size of the point based on the {\itshape size} parameter and then sets or clears the corresponding pixel(s) based on the mode of operation.
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Assumptions}
+
+\begin{DoxyItemize}
+\item None 
+\end{DoxyItemize}
+\end{DoxyParagraph}

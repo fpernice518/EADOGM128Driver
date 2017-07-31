@@ -1,0 +1,51 @@
+\hypertarget{group___d_o_g_m128__rectangle}{\section{Rectangle}
+\label{group___d_o_g_m128__rectangle}\index{Rectangle@{Rectangle}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___d_o_g_m128__rectangle_ga7e0ff8b8f2020b537610c1d254bc4a97}{dog\-\_\-draw\-\_\-rectangle} (\hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} x1, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} y1, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} x2, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} y2, \hyperlink{group___d_o_g_m128__common_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\-\_\-t} size, char mode)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the prototype for the \hyperlink{group___d_o_g_m128__rectangle_ga7e0ff8b8f2020b537610c1d254bc4a97}{dog\-\_\-draw\-\_\-rectangle()} function, which is used to set or clear an unfilled rectangle. 
+
+\subsection{Function Documentation}
+\hypertarget{group___d_o_g_m128__rectangle_ga7e0ff8b8f2020b537610c1d254bc4a97}{\index{Rectangle@{Rectangle}!dog\-\_\-draw\-\_\-rectangle@{dog\-\_\-draw\-\_\-rectangle}}
+\index{dog\-\_\-draw\-\_\-rectangle@{dog\-\_\-draw\-\_\-rectangle}!Rectangle@{Rectangle}}
+\subsubsection[{dog\-\_\-draw\-\_\-rectangle}]{\setlength{\rightskip}{0pt plus 5cm}void dog\-\_\-draw\-\_\-rectangle (
+\begin{DoxyParamCaption}
+\item[{{\bf uint8\-\_\-t}}]{x1, }
+\item[{{\bf uint8\-\_\-t}}]{y1, }
+\item[{{\bf uint8\-\_\-t}}]{x2, }
+\item[{{\bf uint8\-\_\-t}}]{y2, }
+\item[{{\bf uint8\-\_\-t}}]{size, }
+\item[{char}]{mode}
+\end{DoxyParamCaption}
+)}}\label{group___d_o_g_m128__rectangle_ga7e0ff8b8f2020b537610c1d254bc4a97}
+This function is used set or clear an unfilled rectangle of thickness 0 or 1.
+
+\begin{DoxyParagraph}{Parameters}
+
+\begin{DoxyItemize}
+\item {\itshape x1} = X coordinate of the top-\/left corner of the rectangle.\mbox{[}0,127\mbox{]}
+\item {\itshape t1} = Y coordinate of the top-\/left corner of the rectangle.\mbox{[}0,63\mbox{]}
+\item {\itshape x2} = X coordinate of the bottom-\/right corner of the rectangle.\mbox{[}0,127\mbox{]}
+\item {\itshape y2} = Y coordinate of the bottom-\/right corner of the rectangle.\mbox{[}0,63\mbox{]}
+\item {\itshape size} = The thickness of the point to place (0 or 1)
+\item {\itshape mode} = 's' for set, 'c' for clear
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Algorithm}
+
+\begin{DoxyItemize}
+\item Simply calls the fast line drawing functions \hyperlink{group___d_o_g_m128__lines_gae41da7e6bda7b37f0ad7eb037b64ea26}{dog\-\_\-draw\-\_\-v\-\_\-line()} and \hyperlink{group___d_o_g_m128__lines_gad33474648d863d3e2f569d5c7667bbe8}{dog\-\_\-draw\-\_\-h\-\_\-line()} twice each to draw each side of the rectangle.
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Assumptions}
+
+\begin{DoxyItemize}
+\item None 
+\end{DoxyItemize}
+\end{DoxyParagraph}

@@ -1,0 +1,59 @@
+/**
+\mainpage Getting Started With the EA DOGM128
+
+The Electronic Arts DOGM128 is a 64x128 resolution dot matrix display. It
+interfaces over SPI; this library was developed to make it easy and straight 
+forward to use.
+<BR><BR>
+Before writing any code, we must wire the display to the microcontroller. The
+schematics shown below illustrate the required connections.
+
+@image html DOG-Module-Schematic-1.png "DOGM128 Sideboard Schematic"
+<BR><BR>
+@image html DOG-Module-Schematic-2.png "Main Board Schematic"
+
+Once the display is properly connected, the user may begin to code. The
+following code snippet illustrates how to write a simple program
+for this display using the ATMega128. Of course, this snippet only illustrates
+a small preview of the functions in this library. Please explore the rest of 
+this page for an in-depth overview of this library.
+
+@code 
+#include <iom128.h>
+#include <stdio.h>
+#include "DOGM128_driver.h"
+
+void main(void)
+{
+  DDRB = 0x37;    /* Set SS_bar, MOSI, SCK, reset, and A0 to outputs,
+                   * leave rest alone. 
+                   */
+
+  dog_init(DOG_INVERTED_DISPLAY,0x16); /* Initialize Display */
+     
+  printf("Line %d: %c Hello World",1, 128); /* Print Line */
+  
+  dog_draw_rectangle(0,8,127,63,0,'s');             /* Draw a rectangle */
+  
+  /* Print the "LATEX" Logo */
+  dog_putchar_select(25, 20, 'L');
+  dog_putchar_select(23, 26, 'A');
+  dog_putchar_select(25, 32, 'T');
+  dog_putchar_select(29, 38, 'E');
+  dog_putchar_select(25, 44, 'X');
+
+  dog_set_page(6);                                  /* Set printing page */
+  dog_set_column(20);                               /* Set printing column */
+  printf("Hello Rectangle");                        /* Print "Hello Rectangle */
+
+  dog_print_buffer();                  /* IMPORTANT: Print buffer to screen */
+
+  while(1);
+}
+@endcode
+
+@image html DOG-Module-example-code-results.png "Result of above code"
+
+
+
+*/
