@@ -1,2 +1,8 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+project-docs/* linguist-documentation
+Doxygen/ linguist-documentation=true
+Schematics/ linguist-documentation=true
+Datasheets/ linguist-documentation=true
+*.html linguist-documentation=true
